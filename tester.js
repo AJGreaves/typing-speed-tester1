@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sampleTextDiv = document.getElementById("sample-text");
     const typingInput = document.getElementById("typing-input");
     const difficultySelect = document.getElementById("difficulty-select");
+    const resultsMemory = {}; // object to store results
     let selectedDifficulty = "easy"; // Default difficulty
     let sampleText = "";
     let startTime;
@@ -69,13 +70,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function storeResults(difficulty, wpm, accuracy) {
         const results = { wpm, accuracy };
-        localStorage.setItem(difficulty, JSON.stringify(results));
+        resultsMemory[difficulty] = results;
     }
 
     // Function to retrieve results from LocalStorage
     function retrieveResults(difficulty) {
-        const results = localStorage.getItem(difficulty);
-        return results ? JSON.parse(results) : null;
+        return resultsMemory[difficulty] || null;
     }
 
     // Function to display previous results
