@@ -11,7 +11,7 @@
     <body>
         <header class="bg-primary text-white text-center py-4">
             <h1>Typing Speed Tester</h1>
-            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#instructionsModal">
+            <button type="button" class="btn btn-light mt-3" data-bs-toggle="modal" data-bs-target="#instructionsModal">
                 <i class="fa fa-info-circle"></i> Instructions
             </button>
         </header>
@@ -19,17 +19,21 @@
         <main class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8">
-                    <select id="difficulty-select" class="form-select my-3">
-                        <option value="easy">Easy</option>
-                        <option value="medium">Medium</option>
-                        <option value="difficult">Difficult</option>
-                    </select>
+                    <div class="input-group my-3">
+                        <label class="input-group-text" for="difficulty-select">Select Difficulty</label>
+                        <select id="difficulty-select" class="form-select">
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="difficult">Difficult</option>
+                        </select>
+                    </div>
                     <section id="test-area">
                         <p class="lead">Test your typing speed by typing the text shown below:</p>
                         <!-- Placeholder for typing test content -->
                         <div id="sample-text" class="border p-3 my-3">
                             <!-- Sample text to type will go here -->
                         </div>
+                        <label for="typing-input" class="form-label sr-only">Typing Input</label>
                         <textarea class="form-control" id="typing-input" rows="6" placeholder="Start typing here..."></textarea>
                     </section>
                     <div class="row text-center mt-3">
