@@ -1,0 +1,36 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+body {
+    font-family: "Nunito", sans-serif;
+}
+
+h1 {
+    font-family: "Alegreya", serif;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+.result-circle {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 13px auto 0 auto;
+    padding: 20px;
+}
+
+.result {
+    font-size: 2rem;
+}
