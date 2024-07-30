@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sampleTextDiv = document.getElementById("sample-text");
     const typingInput = document.getElementById("typing-input");
     const difficultySelect = document.getElementById("difficulty-select");
+    const retryButton = document.getElementById("retry-button");
     let selectedDifficulty = "easy"; // Default difficulty
     let sampleText = "";
     let startTime;
@@ -115,5 +116,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
         checkTypingCompletion();
+    });
+
+    // Function to reset the test
+    retryButton.addEventListener("click", function resetTest() {
+        updateSampleText();
+        typingInput.value = ""; // Reset the input field
+        startTime = undefined; // Reset the start time
+        typingInput.disabled = false; // Enable the input field
+        document.getElementById("time-result").innerText = "0s"; // Reset time result
+        document.getElementById("wpm-result").innerText = "0"; // Reset WPM result
+        document.getElementById("accuracy-result").innerText = "0%"; // Reset accuracy result
     });
 });
