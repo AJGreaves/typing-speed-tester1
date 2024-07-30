@@ -13,6 +13,17 @@ h2 {
     font-size: 1.2rem;
 }
 
+/* header */
+
+#header {
+    background: linear-gradient(45deg, #ff8400, #ffb013);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* test area */
+
 .correct {
     color: green;
 }
@@ -21,16 +32,36 @@ h2 {
     color: red;
 }
 
+#retry-button {
+    background-color: #ff8400;
+    color: white;
+    font-weight: bold;
+}
+
+#retry-button:hover {
+    background-color: #ffb013;
+}
+
+/* results */
+
 .result-circle {
     width: 120px;
     height: 120px;
     background-color: white;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(255, 132, 0, 0.4);
     margin: 13px auto 0 auto;
     padding: 20px;
 }
 
 .result {
     font-size: 2rem;
+}
+
+/* footer */
+
+footer {
+    background: linear-gradient(45deg, #ffb013, #ff8400);
+    color: white;
+    font-weight: bold;
 }
