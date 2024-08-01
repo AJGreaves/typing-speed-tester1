@@ -57,33 +57,19 @@ document.addEventListener("DOMContentLoaded", function () {
         sampleTextDiv.innerHTML = result;
     }
 
-    function calculateAccuracy(inputText, sampleText) {
-        const inputChars = inputText.split("");
-        const sampleChars = sampleText.split("");
-        let correctChars = 0;
-        inputChars.forEach((char, index) => {
-            if (char === sampleChars[index]) {
-                correctChars++;
-            }
-        });
-        return Math.round((correctChars / sampleChars.length) * 100);
-    }
-
     // Modify the checkTypingCompletion function to store results
     function checkTypingCompletion() {
         const inputText = typingInput.value;
-        if (inputText === sampleText && inputText.length === sampleText.length) {
+        if (inputText.length === sampleText.length) {
             typingInput.disabled = true; // Disable further typing
             const elapsedTime = endTimer();
             const totalTime = Math.round(elapsedTime * 60); // Convert to seconds
             const wordCount = sampleText.split(" ").length;
             const wpm = Math.round(wordCount / elapsedTime);
-            const accuracy = calculateAccuracy(inputText, sampleText);
 
             // Display the results
             document.getElementById("time-result").textContent = `${totalTime}s`;
             document.getElementById("wpm-result").textContent = wpm;
-            document.getElementById("accuracy-result").textContent = `${accuracy}%`;
         }
     }
 
@@ -126,6 +112,5 @@ document.addEventListener("DOMContentLoaded", function () {
         typingInput.disabled = false; // Enable the input field
         document.getElementById("time-result").innerText = "0s"; // Reset time result
         document.getElementById("wpm-result").innerText = "0"; // Reset WPM result
-        document.getElementById("accuracy-result").innerText = "0%"; // Reset accuracy result
     });
 });
