@@ -16,6 +16,20 @@ document.addEventListener("DOMContentLoaded", function () {
             "All questions asked by five watched experts amaze the judge.",
         ],
     };
+    const bestScores = {
+        easy: {
+            time: 0,
+            wpm: 0,
+        },
+        medium: {
+            time: 0,
+            wpm: 0,
+        },
+        difficult: {
+            time: 0,
+            wpm: 0,
+        },
+    };
     const sampleTextDiv = document.getElementById("sample-text");
     const typingInput = document.getElementById("typing-input");
     const difficultySelect = document.getElementById("difficulty-select");
@@ -70,6 +84,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // Display the results
             document.getElementById("time-result").textContent = `${totalTime}s`;
             document.getElementById("wpm-result").textContent = wpm;
+
+            // update and display best scores
+            updateBestScores(selectedDifficulty, totalTime, wpm);
+            displayBestScores();
         }
     }
 
@@ -113,4 +131,22 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("time-result").innerText = "0s"; // Reset time result
         document.getElementById("wpm-result").innerText = "0"; // Reset WPM result
     });
+
+    function updateBestScores(difficulty, time, wpm) {
+        if (time < bestScores[difficulty].time || bestScores[difficulty].time === 0) {
+            bestScores[difficulty].time = time;
+        }
+        if (wpm > bestScores[difficulty].wpm) {
+            bestScores[difficulty].wpm = wpm;
+        }
+    }
+
+    function displayBestScores() {
+        document.getElementById("easy-best-time").textContent = `${bestScores.easy.time}s`;
+        document.getElementById("easy-best-wpm").textContent = bestScores.easy.wpm;
+        document.getElementById("medium-best-time").textContent = `${bestScores.medium.time}s`;
+        document.getElementById("medium-best-wpm").textContent = bestScores.medium.wpm;
+        document.getElementById("difficult-best-time").textContent = `${bestScores.difficult.time}s`;
+        document.getElementById("difficult-best-wpm").textContent = bestScores.difficult.wpm;
+    }
 });
