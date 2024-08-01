@@ -5,9 +5,18 @@ body {
     font-family: "Nunito", sans-serif;
 }
 
-h1, h2 {
+h1 {
     font-family: "Alegreya", serif;
 }
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
 
 /* header */
 
@@ -40,18 +49,32 @@ h1, h2 {
 
 /* results */
 
-#results {
-    text-align: center;
+.shadow-box {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(255, 132, 0, 0.5);
 }
 
-#results h2 {
+#results h2,
+#best-scores h2 {
     margin-bottom: 20px;
     font-weight: bold;
 }
 
 #results > p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+/* best scores */
+
+#best-scores {
+    padding: 20px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#best-scores p {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
 }
